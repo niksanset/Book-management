@@ -1,0 +1,39 @@
+{% extends 'BookApp/base.html' %}
+{% load static %}
+
+{% block title %}
+Books list
+{% endblock title %}
+
+{% block content %}
+
+
+{% for book in book_list %}
+
+
+
+<div class="book_list">
+
+  <div class="card" style="width: 24rem;margin: 20px;margin-top: 60px;">
+      <img src="{% static 'BookApp/img/book_img.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ book }}</h5>
+        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+        <a href="{% url "book_detail" book.slug %}" class="btn btn-dark" style="margin: 5px;" >About book</a>
+        <a href="{% url "book_update" book.slug %}" class="btn btn-dark" style="margin: 5px;" >Update book</a>
+        <a href="{% url "book_delete" book.slug %}" class="btn btn-dark " style="margin: 5px;">Delete book</a>
+      </div>
+    </div>
+  
+
+</div>
+
+
+
+
+   
+      {% endfor %}
+ 
+    
+
+{% endblock content %}

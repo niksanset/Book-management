@@ -1,0 +1,30 @@
+{% extends 'BookApp/base.html' %}
+{% load static %}
+
+{% block title %}
+Book detail
+{% endblock title %}
+
+
+{% block content %}
+<div  class="book_list" style="position: absolute;left: 130px;top: 80px; background-color: rgb(54, 54, 54,0.80 );padding: 50px;border-radius: 50px;width: 1500px; height: 730px;">
+
+    <img src="{% static 'BookApp/img/1984.jpg' %}" alt="" style="width: 25rem;border-radius: 10px;position: absolute;top: 100px;">
+    <p style="position: absolute; left: 450px; top: 20px; font-size: 40px;">{{ book.book_name}} </p>
+    <div style="position: relative;right: 370px;top: 360px;">
+        <p style="position: absolute; left: 800px; top: 150px; font-size: 24px;"> Author: {{ book.author_book }}</p>
+        <p style="position: absolute; left: 800px; top: 100px; font-size: 24px;">Year publish: {{ book.year_publish }}</p>
+        <p style="position: absolute; left: 800px; top:200px; font-size: 24px;">Genre: {{ book.genre }}</p>
+        <p style="position: absolute; left: 800px; top: 60px; font-size: 24px;"> Rating: {{ book.rating }}</p>
+
+    </div>
+    <div style="width: 700px;position: absolute; left: 700px;top: 260px;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus officiis mollitia non amet culpa. Voluptates repudiandae quos nulla, ab facilis, nostrum necessitatibus voluptate eveniet quo, at doloribus dicta assumenda quisquam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet sint assumenda corporis aut recusandae, cupiditate quibusdam placeat quo unde enim, ipsum, ducimus pariatur obcaecati doloribus voluptate dicta laudantium! Illo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ad cum ipsum obcaecati explicabo, modi excepturi praesentium! Nulla, expedita aliquid! Labore repellat ab laudantium saepe asperiores eaque aperiam soluta reprehenderit!</p>
+    </div>
+    
+
+   
+
+</div>
+{% endblock content %}
+

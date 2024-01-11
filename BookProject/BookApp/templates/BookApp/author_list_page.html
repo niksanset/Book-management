@@ -1,0 +1,39 @@
+{% extends 'BookApp/base.html' %}
+{% load static %}
+
+{% block title %}
+Books list
+{% endblock title %}
+
+{% block content %}
+
+
+{% for author in author_list %}
+
+
+
+<div class="book_list">
+
+  <div class="card" style="width: 24rem;margin: 20px;margin-top: 60px;">
+      <img src="{% static 'BookApp/img/author_img.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ author }}</h5>
+        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+        <a href="{% url "author_detail" author.pk %}" class="btn btn-dark" style="margin: 5px;" >About author</a>
+        <a href="{% url "author_update" author.pk %}" class="btn btn-dark" style="margin: 5px;" >Update author</a>
+        <a href="{% url "author_delete" author.pk %}" class="btn btn-dark " style="margin: 5px;">Delete author</a>
+      </div>
+    </div>
+  
+
+</div>
+
+
+
+
+   
+      {% endfor %}
+ 
+    
+
+{% endblock content %}
